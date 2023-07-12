@@ -21,7 +21,7 @@ x + y
 -----
 etc.
 
-# The usage of the print functions can be used like this:
+# You can use the print function like this:
 print("Hello World!")
 -----
 name = "zigouris"
