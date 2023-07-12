@@ -6,8 +6,11 @@ from data import Data
 interpreter = Interpreter()
 data = Data()
 
-while True:
-    text = input("Z# ")
+with open("test.z", "r") as f:
+    lines = f.readlines()
+
+for line in lines:
+    text = line.strip()
     lexer = Lexer(text)
     parser = Parser(lexer, data)
 

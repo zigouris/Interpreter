@@ -14,4 +14,3 @@ class Data:
     def write(self, variable, expression):
         variable_name = variable.value
         self.variables[variable_name] = expression
-        print(self.variables)
