@@ -1,6 +1,6 @@
 # Interpreter
 An interpreter written in python that includes my own programming language
-This project has been going for around 2 days and im very happy with the result until now
+This project has been going on since 5/12/23 and im very happy with the result until now
 
 # Usage
 To use this interpreter you need to have python installed on your computer but you dont need any modules
