@@ -1,3 +1,18 @@
+# 24/7 UPDATES
+Added if statement (just if not else if(elif) or else
+-----
+Usage:
+-----
+if(condition) {
+-----
+‎ ‎ ‎ ‎ print("true")
+-----
+}
+-----
+Added operators:
+-----
+==, !=, <, <=, >, >=
+
 # Interpreter
 An interpreter written in python that includes my own programming language
 This project has been going on since  10th July 2023 and im very happy with the result until now
