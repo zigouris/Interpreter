@@ -1,3 +1,12 @@
-name = "zigouris"
-age = "14"
-print("My name is " + name + " and im " + age + " years old.")
+a = 2
+b = 2
+
+char = "z"
+
+if(a + b != 5) {
+    print("a + b is not equal to 5")
+}
+
+if(char == "z") {
+    print("The character is "+char)
+}

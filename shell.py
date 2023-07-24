@@ -11,11 +11,14 @@ with open("test.z", "r") as f:
 
 for line in lines:
     text = line.strip()
+    
+    if not text:
+        continue
+
     lexer = Lexer(text)
     parser = Parser(lexer, data)
-
+    
     tree = parser.parse()
-
     result = interpreter.interpret(tree, data)
     if result is not None:
         print(result)

@@ -22,6 +22,9 @@ class Identifier(Token):
     def __init__(self, value):
         super().__init__("ID", value)
 
+    def get_value(self):
+        return self.value
+
 class String(Token):
     def __init__(self, value):
         super().__init__("STR", value)

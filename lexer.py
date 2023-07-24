@@ -21,7 +21,7 @@ class Lexer:
             return None
 
     def skip_whitespace(self):
-        while self.current_char is not None and self.current_char.isspace():
+        while self.current_char is not None and (self.current_char.isspace() or self.current_char == '\n'):
             self.move()
 
     def parse_number(self):
@@ -75,11 +75,17 @@ class Lexer:
                     return Token("TYPE", identifier)
                 elif identifier == "print":
                     return Token("PRINT", identifier)
+                elif identifier == "if":
+                    return Token("IF", identifier)
                 return Identifier(identifier)
 
             if self.current_char == "=":
                 self.move()
-                return Operator("=")
+                if self.current_char == "=":
+                    self.move()
+                    return Operator("==")
+                else:
+                    return Operator("=")
 
             if self.current_char == "+":
                 self.move()
@@ -97,6 +103,10 @@ class Lexer:
                 self.move()
                 return Operator("/")
 
+            if self.current_char == "%":
+                self.move()
+                return Operator("%")
+
             if self.current_char == "(":
                 self.move()
                 return Operator("(")
@@ -104,7 +114,39 @@ class Lexer:
             if self.current_char == ")":
                 self.move()
                 return Operator(")")
+
+            if self.current_char == ">":
+                self.move()
+                if self.current_char == "=":
+                    self.move()
+                    return Operator(">=")
+                else:
+                    return Operator(">")
+
+            if self.current_char == "<":
+                self.move()
+                if self.current_char == "=":
+                    self.move()
+                    return Operator("<=")
+                else:
+                    return Operator("<")
+
+            if self.current_char == "!":
+                self.move()
+                if self.current_char == "=":
+                    self.move()
+                    return Operator("!=")
+                else:
+                    raise Exception("Invalid operator")
+                
+            if self.current_char == "{":
+                self.move()
+                return Operator("{")
             
+            if self.current_char == "}":
+                self.move()
+                return Operator("}")
+
             if self.current_char == '"':
                 return self.parse_string()
 
@@ -125,14 +167,18 @@ class Lexer:
                     return Token("TYPE", identifier)
                 elif identifier == "print":
                     return Token("PRINT", identifier)
+                elif identifier == "if":
+                    return Token("IF", identifier)
                 return Identifier(identifier)
             if next_char == "=":
                 return Operator("=")
-            if next_char in ["+", "-", "*", "/"]:
+            if next_char in ["+", "-", "*", "/", "%"]:
                 return Operator(next_char)
-            if next_char == "(":
-                return Operator("(")
-            if next_char == ")":
-                return Operator(")")
+            if next_char == ">":
+                return Operator(">=")
+            if next_char == "<":
+                return Operator("<=")
+            if next_char == "!":
+                return Operator("!=")
 
         return Token("EOF", None)
