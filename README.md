@@ -1,5 +1,5 @@
-# 24/7 UPDATES
-Added if statement (just if not else if(elif) or else
+# 31/7 UPDATES
+Added elif, else statement
 -----
 Usage:
 -----
@@ -8,6 +8,20 @@ if(condition) {
 ‎ ‎ ‎ ‎ print("true")
 -----
 }
+-----
+elif(condition) {
+-----
+‎ ‎ ‎ ‎ print("true")
+-----
+}
+-----
+else {
+-----
+‎ ‎ ‎ ‎ print("false")
+-----
+}
+-----
+if the if statement is false it will go to elif but if the if statement is true then it will skin the elif and else
 -----
 Added operators:
 -----
