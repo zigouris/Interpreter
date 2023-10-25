@@ -80,5 +80,3 @@ My inspiration and motivation for this project was by a friend named An0nSaiko o
 -----
 I've coded in c, c++, java, and more languages in the past.
 -----
-Friend's Profile: https://github.com/An0nSaiko
------
